@@ -7,6 +7,36 @@
   <title>Document</title>
 </head>
 <body>
-  <script type="module" src="main.js"></script>
+  <header></header>
+  <section id="container">
+    <h1>Hola Naturopolis</h1>
+    <button id="botonInicioSesionGoogle">Inicia Sesion con Google</button>
+
+  </section>
+  <footer></footer>
+ 
+ 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCIIFBin6U4satpMcnncnIUDSUClBU8hGM",
+    authDomain: "social-network-naturopolis.firebaseapp.com",
+    projectId: "social-network-naturopolis",
+    storageBucket: "social-network-naturopolis.appspot.com",
+    messagingSenderId: "698784410269",
+    appId: "1:698784410269:web:52c8fa9d53558e071d8274"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script type="module" src="main.js"></script>
 </body>
 </html>
