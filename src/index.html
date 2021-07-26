@@ -27,13 +27,84 @@
     <div class="container-boton">
       <div class="switch">
           <input type="radio" class="switch-input" name="view" value="registro" id="registro" checked>
-          <label for="registro" class="switch-label switch-label-off">Registro</label>
-          <input type="radio" class="switch-input" name="view" value="google-btn" id="google-btn">
-          <label for="google-btn" class="switch-label switch-label-on">Google</label>
+          <label for="registro" class="switch-label switch-label-off">Registrarme</label>
+          <input type="radio" class="switch-input" name="view" value="login" id="login">
+          <label for="login" class="switch-label switch-label-on">Loguearme</label>
           <span class="switch-selection"></span>
       </div>
     </div>
   </main>
+
+  <!-- Segunda vista: Registro -->
+
+  <section class="registro-container hide" id="registro-container">
+    <div class="registro-header-container">
+      <h1 class="registro-titulo">¿Quieres registrarte?</h1>
+      <p class="registro-texto">
+        Puedes hacerlo manualmente o con tu cuenta de Google, 
+        luego recibirás un correo de verificación y listo!
+      </p>
+
+      <img src="./Assets/imagenes/Naturopolis-logo Registro.svg" alt="logo" class="registro-logo">
+    </div>
+
+    <div class="formulario-registro-container" id="formulario-registro-container">
+      <form action="#" method="post" id="form-registro" class="form-registro">
+        <input type="email" name="email-registro" id="email-registro"  class="email-registro" placeholder="tucorreo@correo.com" value="">
+        <input type="password" name="password-registro" id="password-registro" class="password-registro" placeholder="hagáse una clave wena" value="">
+        
+            <!-- Botón switch registro -->
+
+        <div class="container-boton">
+          <div class="switch">
+            <input type="radio" class="switch-input" name="view" value="registrame" id="registrame" checked>
+            <label for="registrame" class="switch-label switch-label-off">Registro</label>
+            <input type="radio" class="switch-input" name="view" value="google-btn" id="google-btn">
+            <label for="google-btn" class="switch-label switch-label-on">
+              <img src="./Assets/imagenes/flat-color-icons_google.svg" alt="google">
+            </label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- tercera vista: Login -->
+
+  <section class="login-container hide" id="login-container">
+    <div class="login-header-container">
+      <h1 class="login-titulo">¿Quieres ingresar?</h1>
+      <p class="login-texto">
+        TE EXTRAÑAMOS!
+        Para disfrutar del contenido puedes hacer login manual
+         o con tu cuenta de Google.
+      </p>
+
+      <img src="./Assets/imagenes/Naturopolis-logo Registro.svg" alt="logo" class="login-logo">
+    </div>
+
+    <div class="formulario-login-container" id="formulario-login-container">
+      <form action="#" method="post" id="form-login" class="form-login">
+        <input type="email" name="email-login" id="email-login"  class="email-login" placeholder="tucorreo@correo.com" value="">
+        <input type="password" name="password-login" id="password-login" class="password-login" placeholder="meta bien su clave" value="">
+        
+            <!-- Botón switch login -->
+
+        <div class="container-boton">
+          <div class="switch">
+            <input type="radio" class="switch-input" name="view" value="registrame" id="registrame" checked>
+            <label for="registrame" class="switch-label switch-label-off">Login</label>
+            <input type="radio" class="switch-input" name="view" value="google-btn" id="google-btn">
+            <label for="google-btn" class="switch-label switch-label-on">
+              <img src="./Assets/imagenes/flat-color-icons_google.svg" alt="google">
+            </label>
+            <span class="switch-selection"></span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
  
  
 <!-- The core Firebase JS SDK is always required and must be listed first -->

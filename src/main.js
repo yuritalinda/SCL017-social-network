@@ -33,3 +33,4 @@ const inicioSesionGoogle=()=>{
 
 let buttonInicioSesionGoogle=document.getElementById("google-btn");
 buttonInicioSesionGoogle.addEventListener("click", inicioSesionGoogle, false);
+

@@ -8,6 +8,11 @@
   src: url(./Assets/fuentes/Roboto/Roboto-Black.ttf);
 }
 
+@font-face {
+  font-family: 'Roboto-regular';
+  src: url(./Assets/fuentes/Roboto/Roboto-Regular.ttf);
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -16,7 +21,7 @@
   color: wheat;
   font-family: 'Didact_Gothic';
   text-align: center;
-  overflow: hidden;
+  
 }
 body{
   display: flex;
@@ -24,6 +29,7 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 660px;
+  overflow-x: hidden;
 }
 
 main {
@@ -57,6 +63,82 @@ main {
   line-height: 31px;
   letter-spacing: 0em;
 }
+
+/* .hide{
+  display: none;
+} */
+
+/* vista del registro */
+
+.registro-container , .login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 320px;
+  text-align: center;
+  margin: 5%;
+}
+.registro-header-container , .login-header-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.registro-titulo , .login-titulo{
+  font-family: 'Roboto';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-transform: uppercase;
+
+
+}
+.registro-texto , .login-texto{
+  font-family: 'Didact_Gothic';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 10%;
+
+}
+
+.formulario-registro-container form , .formulario-login-container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+
+}
+
+.form-registro input , .form-login input{
+width: 100%;
+height: 50px;
+margin: 2px;
+background-color: #76f3d036;
+border: none;
+border-radius: 20px;
+font-family: 'Roboto-regular';
+font-size: 20px;
+font-style:normal;
+font-weight: 200;
+line-height: 28px;
+letter-spacing: 0em;
+}
+
+
+
+
 
 /* //// Boton switch //// */
 .container-boton{
