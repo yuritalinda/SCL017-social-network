@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'Didact_Gothic';
+  src: url(./Assets/fuentes/Didact_Gothic/DidactGothic-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(./Assets/fuentes/Roboto/Roboto-Black.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #281100;
+  color: wheat;
+  font-family: 'Didact_Gothic';
+  text-align: center;
+  overflow: hidden;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 660px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 320px;
+  text-align: center;
+  margin: 5%;
+}
+
+.titulo-bienvenida{
+  font-family: 'Roboto';
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  padding: 10% 0 10% 0;
+}
+
+.subtitulo-bienvenida{
+  width: 248px;
+  height: 93px;
+  font-family: 'Didact_Gothic';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0em;
+}
+
+/* //// Boton switch //// */
+.container-boton{
+  margin-top: 20px;
+}
+.switch {
+  position: relative;
+  margin: 20px auto;
+  height: 60px;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  top: 12px;
+  width: 45%;
+  height: 100%;
+  line-height: 26px;
+  font-size: 18px;
+  color: wheat;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+}
+
+.switch-label:active {
+  font-weight: bold;
+}
+
+.switch-label-off {
+  padding-left: 2px;
+}
+
+.switch-label-on {
+  padding-right: 2px;
+}
+
+.switch-input {
+  display: none;
+  
+}
+
+.switch-input:checked + .switch-label {
+  position: relative;
+  top: 15px;
+  left: 10px;
+  font-family: 'Roboto';
+  color: #281100;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 21px;
+  letter-spacing: 0em;
+  transition: 0.15s ease-out;
+}
+
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+
+  left: 50%;
+  
+}
+
+.switch-selection {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 1px;
+  width: 50%;
+  height: 100%;
+  background:#76F3D0;
+  border-radius: 20px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  transition: left 0.15s ease-out;
+}
+

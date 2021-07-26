@@ -31,5 +31,5 @@ const inicioSesionGoogle=()=>{
     });
 }
 
-let buttonInicioSesionGoogle=document.getElementById("botonInicioSesionGoogle");
-buttonInicioSesionGoogle.addEventListener("click",inicioSesionGoogle,false);
+let buttonInicioSesionGoogle=document.getElementById("google-btn");
+buttonInicioSesionGoogle.addEventListener("click", inicioSesionGoogle, false);

@@ -1,38 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-16">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+  <title>Naturópolis</title>
 </head>
 <body>
-  <header></header>
-  <section id="container">
-    <h1>Hola Naturopolis</h1>
-    <button id="botonInicioSesionGoogle">Inicia Sesion con Google</button>
 
-  </section>
-  <footer></footer>
+  <header class="logo-container"> 
+    <img src="./Assets/imagenes/Naturopolis-logo portada.svg" alt="logo-portada" class="logo-portada">
+  </header>
+
+  <main class="main-container">
+
+    <section class="bienvenida">
+      <h1 class="titulo-bienvenida">Naturópolis</h1>
+      <p class="subtitulo-bienvenida">
+        Red social para amantes de la vida natural y orgánica.
+      </p> 
+    </section>
+
+    <!-- Botón switch -->
+
+    <div class="container-boton">
+      <div class="switch">
+          <input type="radio" class="switch-input" name="view" value="registro" id="registro" checked>
+          <label for="registro" class="switch-label switch-label-off">Registro</label>
+          <input type="radio" class="switch-input" name="view" value="google-btn" id="google-btn">
+          <label for="google-btn" class="switch-label switch-label-on">Google</label>
+          <span class="switch-selection"></span>
+      </div>
+    </div>
+  </main>
  
  
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
 <script>
   // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCIIFBin6U4satpMcnncnIUDSUClBU8hGM",
-    authDomain: "social-network-naturopolis.firebaseapp.com",
-    projectId: "social-network-naturopolis",
-    storageBucket: "social-network-naturopolis.appspot.com",
-    messagingSenderId: "698784410269",
-    appId: "1:698784410269:web:52c8fa9d53558e071d8274"
+  var firebaseConfig = {
+    apiKey: "AIzaSyBkgF4b369LZmj3he96ND0ifUrmzaTLgy0",
+    authDomain: "scl017-naturopolis.firebaseapp.com",
+    projectId: "scl017-naturopolis",
+    storageBucket: "scl017-naturopolis.appspot.com",
+    messagingSenderId: "1077091569476",
+    appId: "1:1077091569476:web:69bd54cde4e96cb25d5111"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
