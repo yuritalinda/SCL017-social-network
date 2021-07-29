@@ -28,9 +28,9 @@ export default () =>{
   </div>
 
   `
-  const sectionElement = document.createElement('main');
-  sectionElement.classList.add('registro-container');
-  sectionElement.innerHTML = viewRegistro;
-  sectionElement.querySelector('#registro').addEventListener('click', console.log('página de registro') );
-  return sectionElement;
+  // const sectionElement = document.createElement('main');
+  // sectionElement.classList.add('registro-container');
+  // sectionElement.innerHTML = viewRegistro;
+  // sectionElement.querySelector('#registro').addEventListener('click', console.log('página de registro') );
+  // return sectionElement;
 }

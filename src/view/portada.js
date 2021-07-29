@@ -40,9 +40,10 @@ export default () => {
 
     `;
 
-  // const sectionElement = document.createElement('main');
-  // sectionElement.classList.add('login-container');
-  // sectionElement.innerHTML = viewPortada;
-  // sectionElement.querySelector('#login').addEventListener('click', console.log(sectionElement) );
-  // return sectionElement;
+    // Esta es la portada, no deberia aparecer yo
+  const sectionElement = document.createElement('main');
+  sectionElement.classList.add('login-container');
+  sectionElement.innerHTML = viewPortada;
+  sectionElement.querySelector('#login').addEventListener('click', console.log(sectionElement) );
+  return sectionElement;
 };

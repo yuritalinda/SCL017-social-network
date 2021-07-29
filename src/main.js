@@ -1,19 +1,19 @@
 // Este es el punto de entrada de tu aplicacion
 
 import { myFunction } from './lib/index.js';
-import { router } from './controller/router.js';
-import { registro } from './view/registro.js';
-import { portada } from './view/portada.js';
+import { cambioRuta } from './controller/router.js';
+import registro from './view/registro.js';
+import portada from './view/portada.js';
 
 
 
-document.getElementById('root').innerHTML = portada();
+document.getElementById('root').innerHTML = portada;
 
 const init = () =>{
   window.addEventListener('hashchange' , ()=>{
     myFunction();
     console.log(window.location.hash);
-    router(window.location.hash);
+    cambioRuta(window.location.hash);
 
   })
 };

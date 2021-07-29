@@ -1,5 +1,5 @@
-import { viewPortada } from '../view/portada.js';
-import { viewRegistro } from '../view/registro.js';
+import portada from '../view/portada.js';
+import registro from '../view/registro.js';
 
 export const cambioRuta = (hash) =>{
 
@@ -12,18 +12,18 @@ export const cambioRuta = (hash) =>{
   };
   
 
-const mostrarVistas = (hash) =>{
-  const containerRoot = document.getElementById('root');
+  const mostrarVistas = (hash) =>{
+    const containerRoot = document.getElementById('root');
 
-  // containerRoot.innerHTML = viewPortada();
+    containerRoot.innerHTML = portada;
 
-  switch (hash) {
-    case '#/' : containerRoot.appendChild(viewPortada);
-    break;
-    case '#/registro' : containerRoot.appendChild(viewRegistro);
-    break;
-    default : console.log('no existessssssssss');
-  }
+    switch (hash)  {
+      case '#/' : containerRoot.appendChild(portada);
+      break;
+      case '#/registro' : containerRoot.appendChild(registro);
+      break;
+      default : console.log('no existessssssssss');
+    }
 
 }
 
