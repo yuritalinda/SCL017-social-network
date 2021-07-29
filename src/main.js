@@ -1,8 +1,22 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+// Este es el punto de entrada de tu aplicacion
 
-myFunction();
+import { initRouter } from './router.js';
+/*import { myFunction } from './lib/index.js';
+
+myFunction();*/
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBkgF4b369LZmj3he96ND0ifUrmzaTLgy0",
+    authDomain: "scl017-naturopolis.firebaseapp.com",
+    projectId: "scl017-naturopolis",
+    storageBucket: "scl017-naturopolis.appspot.com",
+    messagingSenderId: "1077091569476",
+    appId: "1:1077091569476:web:69bd54cde4e96cb25d5111"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 let provider = new firebase.auth.GoogleAuthProvider(); 
 
 
@@ -33,4 +47,3 @@ const inicioSesionGoogle=()=>{
 
 let buttonInicioSesionGoogle=document.getElementById("google-btn");
 buttonInicioSesionGoogle.addEventListener("click", inicioSesionGoogle, false);
-
