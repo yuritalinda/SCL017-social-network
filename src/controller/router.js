@@ -1,5 +1,5 @@
-import portada from '../view/portada.js';
-import registro from '../view/registro.js';
+import {portadaLogin} from '../view/portada.js';
+import {registro} from '../view/registro.js';
 
 export const cambioRuta = (hash) =>{
 
@@ -14,15 +14,14 @@ export const cambioRuta = (hash) =>{
 
   const mostrarVistas = (hash) =>{
     const containerRoot = document.getElementById('root');
-
-    containerRoot.innerHTML = portada;
+    containerRoot.innerHTML = '';
 
     switch (hash)  {
-      case '#/' : containerRoot.appendChild(portada);
+      case '#/' : containerRoot.appendChild(portadaLogin());
       break;
-      case '#/registro' : containerRoot.appendChild(registro);
+      case '#/registro' : containerRoot.appendChild(registro());
       break;
-      default : console.log('no existessssssssss');
+      default : console.log('no existessssssssss, hacer vista 404');
     }
 
 }

@@ -1,11 +1,25 @@
+import {signInOnSubmit} from '../controller/view-controller.js';
 
-export default () =>{
+
+export const registro = () =>{
+
+  const container = document.createElement('section');
   const viewRegistro = 
   `
+  <div class="portada-header-container">
+  <h1 class="portada-titulo">Naturópolis</h1>
+  <p class="portada-texto">
+        ¡Bienvenida! Registrate para acceder a tu muro.
+      </p>
+
+      <img src="./Assets/imagenes/Naturopolis-logo-vistas.svg" alt="logo" class="logo-portada">
+    </div>
+
   <div class="formulario-registro-container" id="formulario-registro-container">
+  <h2 class="registro-titulo">Regístrate</h2>
     <form action="#" method="post" id="form-registro" class="form-registro">
-      <input type="email" name="email-registro" id="email-registro"  class="email-registro" placeholder="tucorreo@correo.com" value="">
-      <input type="password" name="password-registro" id="password-registro" class="password-registro" placeholder="contraseña" value="">
+      <input type="email" name="email-registro" id="email-registro"  class="email" placeholder="tucorreo@correo.com" value="">
+      <input type="password" name="password-registro" id="password-registro" class="password" placeholder="contraseña" value="">
         <h4>Puedes hacer registro manual o puedes acceder con tu cuenta de Google</h4>
 
         
@@ -27,10 +41,13 @@ export default () =>{
     <p class="registrate">¿ya tienes cuenta? Entonces <a href="#/">haz login</a> y comienza a disfrutar de una vida natural</p>
   </div>
 
-  `
-  // const sectionElement = document.createElement('main');
-  // sectionElement.classList.add('registro-container');
-  // sectionElement.innerHTML = viewRegistro;
-  // sectionElement.querySelector('#registro').addEventListener('click', console.log('página de registro') );
-  // return sectionElement;
-}
+  `;
+
+  container.innerHTML = viewRegistro;
+
+
+  const btnRegistro = container.querySelector('#registro');
+        btnRegistro.addEventListener('click' , signInOnSubmit)
+
+return container;
+};

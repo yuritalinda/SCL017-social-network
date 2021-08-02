@@ -32,7 +32,7 @@ body{
   overflow-x: hidden;
 }
 
-main {
+main , section{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,11 +64,7 @@ main {
   letter-spacing: 0em;
 }
 
-/* .hide{
-  display: none;
-} */
 
-/* vista del registro */
 
 .registro-container , .login-container {
   display: flex;
@@ -223,10 +219,10 @@ letter-spacing: 0em;
   background-color: transparent;
 }
 
-/* vista laptops */
+/* ///// vista laptops ////*/
 
 @media screen and (min-width : 900px){
-  main{
+  main , section{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -246,7 +242,7 @@ letter-spacing: 0em;
   background-color: transparent;
  }
 
- .formulario-login-container{
+ .formulario-login-container , .formulario-registro-container{
    display: flex;
    flex-direction: column;
    justify-content: space-evenly;
