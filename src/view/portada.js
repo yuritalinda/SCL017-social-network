@@ -1,9 +1,12 @@
- import { logInOnSubmit, loginWithGoogle} from '../view-controller.js';
+/* este archivo contiene la vista de la portada 
+integrada con el LOGIN y con acceso (hash) al REGISTRO */
+import {logInOnSubmit , loginWithGoogle} from '../controller/view-controller.js';
 
+export const portadaLogin = () => {
 
-export default () => {
-  const formLogin = document.createElement('form');
-  const formContent = `
+  const container = document.createElement('section');
+  const viewPortada = 
+  `
   <div class="portada-header-container">
     <h1 class="portada-titulo">Naturópolis</h1>
     <p class="portada-texto">
@@ -12,6 +15,7 @@ export default () => {
     <img src="./Assets/imagenes/Naturopolis-logo-vistas.svg" alt="logo" class="logo-portada">
   </div>
   <div class="formulario-login-container" id="formulario-login-container">
+  <h2 class="registro-titulo">Haz login</h2>
     <form action="#" method="post" id="form-login" class="form-login">
       <input type="email" name="email-login" id="email-login"  class="email-login" placeholder="tucorreo@correo.com" value="">
       <input type="password" name="password-login" id="password-login" class="password-login" placeholder="contraseña" value="">
@@ -19,8 +23,8 @@ export default () => {
           <!-- Botón switch login -->
       <div class="container-boton">
         <div class="switch">
-          <input type="radio" class="switch-input" name="view" value="login" id="btn-login" checked>
-          <label for="registrame" class="switch-label switch-label-off">login</label>
+          <input type="radio" class="switch-input" name="view" value="login" id="login" checked>
+          <label for="login" class="switch-label switch-label-off">login</label>
           <input type="radio" class="switch-input" name="view" value="google-btn" id="google-btn">
           <label for="google-btn" class="switch-label switch-label-on">
             <img class="logo-google" src="./Assets/imagenes/flat-color-icons_google.svg" alt="google">
@@ -29,14 +33,19 @@ export default () => {
         </div>
       </div>
     </form>
-    <p class="registrate">¿No tienes cuenta? Entonces <a href="#/SigIn">registrate</a> y comienza a disfrutar de una vida natural</p>
+
+    <p class="registrate">¿No tienes cuenta? Entonces <a id="registro-link" href="#/registro">registrate</a> y comienza a disfrutar de una vida natural</p>
   </div>
     `;
-    const btnLogIn = formLogin.querySelector('#btn-login');
-    btnLogIn.addEventListener('click', logInOnSubmit);
-    const btnLogInGoogle = formLogin.querySelector('#google-btn');
-    btnLogInGoogle.addEventListener('click', loginWithGoogle);
-    
-    return formLogin;
+
+  
+
+  container.innerHTML = viewPortada;
+
+  const btnLogin = container.querySelector('#login');
+  btnLogin.addEventListener('click', logInOnSubmit);
+  const btnGoogle = container.querySelector('#google-btn');
+  btnGoogle.addEventListener('click' , loginWithGoogle);
+  return container;
 
 };

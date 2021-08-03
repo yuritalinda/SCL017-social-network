@@ -1,18 +1,24 @@
-import { initRouter } from './router.js';
+// Este es el punto de entrada de tu aplicacion
 
-const init = () => {
-  myFunction();
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBkgF4b369LZmj3he96ND0ifUrmzaTLgy0",
-    authDomain: "scl017-naturopolis.firebaseapp.com",
-    projectId: "scl017-naturopolis",
-    storageBucket: "scl017-naturopolis.appspot.com",
-    messagingSenderId: "1077091569476",
-    appId: "1:1077091569476:web:69bd54cde4e96cb25d5111"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  initRouter();
+import { cambioRuta } from './controller/router.js';
+import {portadaLogin} from './view/portada.js';
+
+ document.getElementById('root').appendChild(portadaLogin());
+
+
+
+
+const init = () =>{
+
+
+  window.addEventListener('hashchange' , ()=>{ 
+    cambioRuta(window.location.hash);
+  })
 };
-window.onload = init();
+
+
+window.addEventListener('load', init);
+
+
+
+
