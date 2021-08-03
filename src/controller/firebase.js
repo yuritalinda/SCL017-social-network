@@ -11,15 +11,15 @@ export const googleLogin = () => {
 };
 
 
-// export const saveUsers = () => {
-//   const user = firebase.auth().currentUser;
-//   firebase.firestore().collection('users').doc(user.uid).set({
-//     user: user.displayName,
-//     avatar: user.photoURL,
-//     uid: user.uid,
-//     email: user.email,
-//   });
-// };
+export const saveUsers = () => {
+  const user = firebase.auth().currentUser;
+  firebase.firestore().collection('users').doc(user.uid).set({
+    user: user.displayName,
+    avatar: user.photoURL,
+    uid: user.uid,
+    email: user.email,
+  });
+};
 
 // export const signOut = () => firebase.auth().signOut();
 
