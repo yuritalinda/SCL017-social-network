@@ -13,7 +13,7 @@ export const portadaLogin = () => {
       ¡Bienvenida! Haz login para acceder a tu muro.
     </p>
 
-    <img src="./Assets/imagenes/Naturopolis-logo-vistas.svg" alt="logo" class="logo-portada">
+    <img src="../Assets/imagenes/Naturopolis-logo portada.svg" alt="logo" class="logo-portada">
   </div>
 
   <div class="formulario-login-container" id="formulario-login-container">
@@ -37,7 +37,7 @@ export const portadaLogin = () => {
       </div>
     </form>
 
-    <p class="registrate">¿No tienes cuenta? Entonces <a id="registro-link" href="#/registro">registrate</a> y comienza a disfrutar de una vida natural</p>
+    <p class="registrate">¿No tienes cuenta? Entonces <a id="registro-link" href="#/registro">registrate</a> y comienza a disfrutar de una vida natural.</p>
   </div>
 
 

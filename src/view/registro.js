@@ -12,7 +12,7 @@ export const registro = () =>{
         ¡Bienvenida! Registrate para acceder a tu muro.
       </p>
 
-      <img src="./Assets/imagenes/Naturopolis-logo-vistas.svg" alt="logo" class="logo-portada">
+      <img src="../Assets/imagenes/Naturopolis-logo portada.svg" alt="logo" class="logo-portada">
     </div>
 
   <div class="formulario-registro-container" id="formulario-registro-container">
@@ -38,7 +38,7 @@ export const registro = () =>{
       </div>
     </form>
 
-    <p class="registrate">¿ya tienes cuenta? Entonces <a href="#/">haz login</a> y comienza a disfrutar de una vida natural</p>
+    <p class="registrate">¿ya tienes cuenta? Entonces <a href="#/">haz login</a> y comienza a disfrutar de una vida natural.</p>
   </div>
 
   `;
