@@ -1,5 +1,6 @@
 import {portadaLogin} from '../view/portada.js';
 import {registro} from '../view/registro.js';
+import {error} from '../view/404Page.js';
 
 export const cambioRuta = (hash) =>{
 
@@ -21,9 +22,7 @@ export const cambioRuta = (hash) =>{
       break;
       case '#/registro' : containerRoot.appendChild(registro());
       break;
-      default : console.log('no existessssssssss, hacer vista 404');
+      default : containerRoot.appendChild(error());
     }
 
 }
-
-

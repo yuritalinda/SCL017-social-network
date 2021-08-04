@@ -11,15 +11,13 @@ export const registro = () =>{
   <p class="portada-texto">
         ¡Bienvenida! Registrate para acceder a tu muro.
       </p>
-
-      <img src="./Assets/imagenes/Naturopolis-logo-vistas.svg" alt="logo" class="logo-portada">
+      <img src="../Assets/imagenes/Naturopolis-logo portada.svg" alt="logo" class="logo-portada">
     </div>
-
   <div class="formulario-registro-container" id="formulario-registro-container">
   <h2 class="registro-titulo">Regístrate</h2>
     <form action="#" method="post" id="form-registro" class="form-registro">
-      <input type="email" name="email-registro" id="email-registro"  class="email" placeholder="tucorreo@correo.com" value="">
-      <input type="password" name="password-registro" id="password-registro" class="password" placeholder="contraseña" value="">
+      <input type="email" name="email-registro" id="email-registro"  class="text-form" placeholder="tucorreo@correo.com" >
+      <input type="password" name="password-registro" id="password-registro" class="text-form" placeholder="contraseña" >
         <h4>Puedes hacer registro manual o puedes acceder con tu cuenta de Google</h4>
         
           <!-- Botón switch registro -->
@@ -35,9 +33,8 @@ export const registro = () =>{
         </div>
       </div>
     </form>
-    <p class="registrate">¿ya tienes cuenta? Entonces <a href="#/LogIn">haz login</a> y comienza a disfrutar de una vida natural</p>
+    <p class="registrate">¿ya tienes cuenta? Entonces <a href="#/">haz login</a> y comienza a disfrutar de una vida natural.</p>
   </div>
-
   `;
 
   container.innerHTML = viewRegistro;

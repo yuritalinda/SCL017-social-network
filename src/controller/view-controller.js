@@ -4,12 +4,13 @@ import {
   signIn, logIn, googleLogin,
 } from './firebase.js';
 
-const changeHash = (hash) => {
+export const changeHash = (hash) => {
   location.hash = hash;
 };
 export const signInOnSubmit = () => { //funcion de registro manual
   const email = document.querySelector('#email-registro').value;
   const password = document.querySelector('#password-registro').value;
+  console.log('email');
   signIn(email, password)
     // eslint-disable-next-line no-alert
     .then(() => alert('Datos Guardados'), changeHash('#/'))
@@ -21,7 +22,7 @@ export const signInOnSubmit = () => { //funcion de registro manual
 
 export const loginWithGoogle = () => {
   googleLogin().then(() => {
-    changeHash('/Home');
+    changeHash('/#home');
     saveUsers();
   });
 };
@@ -30,7 +31,7 @@ export const logInOnSubmit = () => { //funcion de logueado manual
   const email = document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
   logIn(email, password)
-    .then(() => changeHash('/Home'))
+    .then(() => changeHash('/#home'))
     .catch((error) => {
       const errorMessage = error.message;
       alert(errorMessage);
