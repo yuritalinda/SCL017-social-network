@@ -14,6 +14,7 @@ const init = () =>{
 
   window.addEventListener('hashchange' , ()=>{ 
     cambioRuta(window.location.hash);
+    console.log(window.location.hash);
   })
 };
 
