@@ -16,8 +16,8 @@ export const registro = () =>{
   <div class="formulario-registro-container" id="formulario-registro-container">
   <h2 class="registro-titulo">Regístrate</h2>
     <form action="#" method="post" id="form-registro" class="form-registro">
-      <input type="email" name="email-registro" id="email-registro"  class="text-form" placeholder="tucorreo@correo.com" >
-      <input type="password" name="password-registro" id="password-registro" class="text-form" placeholder="contraseña" >
+      <input type="email" name="email-registro" id="email-registro"  class="email" placeholder="tucorreo@correo.com" value="">
+      <input type="password" name="password-registro" id="password-registro" class="password" placeholder="contraseña" value="">
         <h4>Puedes hacer registro manual o puedes acceder con tu cuenta de Google</h4>
         
           <!-- Botón switch registro -->
@@ -25,7 +25,6 @@ export const registro = () =>{
         <div class="switch">
           <input type="radio" class="switch-input" name="view" id="registro">
           <label for="registro" class="switch-label switch-label-off">registro</label>
-
           <input type="radio" class="switch-input" name="view" value="google-btn" id="google-btn" checked>
           <label for="google-btn" class="switch-label switch-label-on">
             <img class="logo-google" src="./Assets/imagenes/flat-color-icons_google.svg" alt="google">

@@ -1,4 +1,3 @@
-  
 // Este es el punto de entrada de tu aplicacion
 
 import { cambioRuta } from './controller/router.js';
@@ -19,6 +18,7 @@ const init = () =>{
 };
 
 
+window.addEventListener('load', init);
 
 
 

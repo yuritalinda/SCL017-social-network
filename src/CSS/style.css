@@ -259,32 +259,3 @@ letter-spacing: 0em;
 
 
 }
-/*///Muro///*/
-.header-container{
-  
-  position: absolute;
-  width: 309px;
-  height: 48px;
-  left: 29px;
-  top: 24px;
-  
-
-}
-.titulo-header{
-  position: absolute;
-  width: 206px;
-  height: 42px;
-  left: 84px;
-  top: 27px;
-  
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 42px;
-  text-align: center;
-  
-  color: #FFFFFF
-
-
-}
