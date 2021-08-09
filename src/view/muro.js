@@ -1,4 +1,5 @@
 //Importar las funciones del view controller que usaremos en el muro
+import {notas} from  './notas.js';
 
 
 export const muro = () =>{
@@ -23,14 +24,13 @@ export const muro = () =>{
   </section>
 
   <section class="post-container" id="post-container">
-    esta seccion será otro archivo, puede que se divida en dos secciones
   </section>
 
   <footer class="crear-post-container" id="crear-post-container">
     <form action="">
       <textarea name="" id="" cols="30" rows="10" placeholder="¿Qué deseas compartir hoy?">
 
-      </textarea>
+      </textarea> escribe aca tu post
       <button>
         <img src="" alt="">ENVIAR
       </button>
@@ -40,6 +40,9 @@ export const muro = () =>{
   `;
 
   container.innerHTML = viewMuro;
+
+  const notasContainer = container.querySelector('#post-container');
+  notasContainer.appendChild(notas());
 
   //eventos del muro:
   //click para los componentes
