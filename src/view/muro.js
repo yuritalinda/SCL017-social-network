@@ -4,7 +4,7 @@ import {notas} from  './notas.js';
 
 export const muro = () =>{
 
-  const container = document.createElement('main');
+  const container = document.createElement('sectionx');
 
   const viewMuro= `
   <header class="header-container" id="header-container">
