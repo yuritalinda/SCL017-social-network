@@ -44,6 +44,6 @@ export const muro = () =>{
 // Usamos INSERTBEFORE para agregar el archivo notas.js
   const crearPost = container.querySelector('#crear-post');
   container.insertBefore(notas() , crearPost);
-
+  
 return container;
 };
