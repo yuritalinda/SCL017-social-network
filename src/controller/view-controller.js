@@ -23,7 +23,7 @@ export const signInOnSubmit = () => { //funcion de registro manual
 export const loginWithGoogle = () => {
   googleLogin().then(() => {
     changeHash('/#home');
-    // saveUsers();
+    saveUsers();
   });
 };
 
@@ -43,12 +43,12 @@ export const logInOnSubmit = () => { //funcion de logueado manual
     });
 };
 
-// export const signOutSubmit = () => {
-//   signOut().then(() => {
-//     changeHash('/logIn');
-//     alert('Cerrando sesión');
-//   }).catch((error) => {
-//     const errorMessage = error.message;
-//     alert(errorMessage);
-//   });
-// };
+export const signOutSubmit = () => {
+  signOut().then(() => {
+    changeHash('/#');
+    alert('Cerrando sesión');
+  }).catch((error) => {
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
+};
