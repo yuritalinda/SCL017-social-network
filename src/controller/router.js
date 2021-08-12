@@ -9,10 +9,9 @@ export const cambioRuta = (hash) =>{
     return mostrarVistas(hash);
   } else if (hash === '#/registro'){
       return mostrarVistas(hash);
-  } else if (hash === '#/#home'){
+  } else if (hash === '#/home'){
       return mostrarVistas(hash);
   }
-    else return mostrarVistas(hash); //esto me retorna el ultimo valor de la variable hash
   };
   
 
@@ -25,7 +24,7 @@ export const cambioRuta = (hash) =>{
       break;
       case '#/registro' : containerRoot.appendChild(registro());
       break;
-      case '#/#home' : containerRoot.appendChild(muro());
+      case '#/home' : containerRoot.appendChild(muro());
       break
       default : containerRoot.appendChild(error());
     }

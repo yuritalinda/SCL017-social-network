@@ -1,5 +1,6 @@
 //Importar las funciones del view controller que usaremos en el muro
 import {notas} from  './notas.js';
+import {signOutSubmit} from '../controller/view-controller.js';
 
 
 export const muro = () =>{
@@ -13,9 +14,9 @@ export const muro = () =>{
     <h1 id="titulo-header" class="titulo-header">
       Naturópolis
     </h1>
-    <a href="portada.js">
+    <button class="btn-signOut"id="btn-signOut">
       <img src="../Assets/imagenes/Frame-icono-logOut.svg" alt="logOut" class="botón-logOut">
-    </a>
+    </button>
   </header>
 
   <section class="perfil-usuario" id="perfil-usuario">
@@ -44,6 +45,12 @@ export const muro = () =>{
 // Usamos INSERTBEFORE para agregar el archivo notas.js
   const crearPost = container.querySelector('#crear-post');
   container.insertBefore(notas() , crearPost);
+  
+  const signOutBtn = container.querySelector('#btn-signOut');
+  signOutBtn.addEventListener('click' , ()=>{
+    signOutSubmit();
+  });
+
 
 return container;
 };

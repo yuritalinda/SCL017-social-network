@@ -13,7 +13,7 @@ export const googleLogin = () => {
 
 export const saveUsers = () => {
   const user = firebase.auth().currentUser;
-  firebase.firestore().collection('users').doc(user.uid).set({
+  firebase.firestore().collection('perfil').doc(user.uid).set({
     user: user.displayName,
     avatar: user.photoURL,
     uid: user.uid,
@@ -21,7 +21,7 @@ export const saveUsers = () => {
   });
 };
 
-// export const signOut = () => firebase.auth().signOut();
+export const signOut = () => firebase.auth().signOut();
 
 // export const addNote = (textNewNote, selectPrivacy) => firebase.firestore().collection('notes').add({
 //   title: textNewNote,
