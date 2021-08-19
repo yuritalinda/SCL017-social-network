@@ -27,13 +27,11 @@ export const notas = ()=>{
   `;
 
   container.innerHTML = viewNotas;
+
+
+
   return container;
   
 
 } 
 
-
-
-  // <section id="post-container" class="post-container">
-    
-  // </section>

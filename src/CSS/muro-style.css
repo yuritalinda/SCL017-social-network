@@ -14,9 +14,9 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-    background: linear-gradient(315deg, #2b1200, #240f00);
-    box-shadow:  -5px -5px 9px #190b00,
-             5px 5px 9px #371700;
+    background: #281100;
+    box-shadow: inset -5px -5px 5px #462710,
+    inset 5px 5px 5px #462710;
    padding: 3%;
 
   }
@@ -28,6 +28,11 @@
     text-align: center;
     color: wheat;
   
+  }
+
+  .btn-signOut{
+    border: 0;
+    outline: 0;
   }
 
 /* perfil de usuario */

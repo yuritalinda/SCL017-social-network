@@ -1,10 +1,10 @@
 // Este es el punto de entrada de tu aplicacion
 
 import { cambioRuta } from './controller/router.js';
-import { muro } from './view/muro.js';
+// import { muro } from './view/muro.js';
 import {portadaLogin} from './view/portada.js';
 
- document.getElementById('root').appendChild(muro());
+ document.getElementById('root').appendChild(portadaLogin());
 
 
 
