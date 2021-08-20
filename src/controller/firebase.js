@@ -12,24 +12,22 @@ export const googleLogin = () => {
 
 
 export const saveUsers = () => {
-  const user = firebase.auth().currentUser;
-  firebase.firestore().collection('perfil').doc(user.uid).set({
-    user: user.displayName,
-    avatar: user.photoURL,
-    uid: user.uid,
-    email: user.email,
+  const user = firebase.auth().currentUser; 
+  firebase.firestore().collection('users').doc(user.uid).set({ 
+    name: user.displayName,
+    mail: user.email,
+    uid: user.uid
   });
 };
 
 export const signOut = () => firebase.auth().signOut();
 
-// export const addNote = (textNewNote, selectPrivacy) => firebase.firestore().collection('notes').add({
+// export const addNote = (textNewNote) => firebase.firestore().collection('publicaciones').add({
 //   title: textNewNote,
 //   user: firebase.auth().currentUser.displayName,
 //   avatar: firebase.auth().currentUser.photoURL,
 //   uid: firebase.auth().currentUser.uid,
 //   date: firebase.firestore.Timestamp.fromDate(new Date()),
-//   privacy: selectPrivacy,
 //   love: 0,
 //   lovers: [],
 //   comments: [],

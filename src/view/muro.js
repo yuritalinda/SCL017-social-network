@@ -6,7 +6,10 @@ import {signOutSubmit} from '../controller/view-controller.js';
 export const muro = () =>{
 
   const container = document.createElement('section');
+  const user = firebase.auth().currentUser;
+
   container.className = 'muro';
+
 
   const viewMuro= `
   <header class="header-container" id="header-container">
@@ -20,8 +23,8 @@ export const muro = () =>{
   </header>
 
   <section class="perfil-usuario" id="perfil-usuario">
-    <img src="../Assets/imagenes/Avatar.svg" alt="" class="avatar-usuario">
-    <h3 class="nombre-usuario-perfil" id="nombre-usuario">Nombre Apellido</h3>
+    <img src="${user.photoURL}" alt="" class="avatar-usuario">
+    <h3 class="nombre-usuario-perfil" id="nombre-usuario">${user.displayName}</h3>
   </section>
 
   <section class="crear-post" id="crear-post">

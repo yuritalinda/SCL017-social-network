@@ -1,8 +1,22 @@
 //Este archivo maneja todas las funciones de firebase.js que se van a usar
 
 import {
-  signIn, logIn, googleLogin, saveUsers, signOut
+  signIn, logIn, googleLogin, signOut , saveUsers
 } from './firebase.js';
+
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+
+    console.log(user , 'estamos logueados');
+
+  } else {
+     
+    console.log(user , 'NO estamos logueados');
+    
+
+  }
+});
 
 export const changeHash = (hash) => {
   location.hash = hash;
@@ -12,8 +26,14 @@ export const signInOnSubmit = () => { //funcion de registro manual
   const password = document.getElementById("password-registro").value;
   
   signIn(email, password)
-    // eslint-disable-next-line no-alert
-    .then(() => alert('Datos Guardados'), changeHash('/home'))
+    .then((userCredential) => {
+      let user = userCredential.user;
+      console.log(user);
+      saveUsers();
+      alert('Datos Guardados');
+      changeHash('#/');
+
+    })
     .catch((error) => {
       const errorMessage = error.message;
       alert(errorMessage);
@@ -24,6 +44,7 @@ export const loginWithGoogle = () => {
   googleLogin().then(() => {
     changeHash('/home');
     saveUsers();
+    
   });
 };
 
@@ -31,10 +52,13 @@ export const logInOnSubmit = () => { //funcion de logueado manual
   const email = document.getElementById("email-login").value;
   const password = document.getElementById("password-login").value; 
 
-  console.log(email, password);
 
   logIn(email, password)
-    .then(() => changeHash('/home'))
+    .then(() =>  {
+      saveUsers();
+      changeHash('/home');
+
+    })
     .catch((error) => {
       const errorMessage = error.message;
       alert(errorMessage);
