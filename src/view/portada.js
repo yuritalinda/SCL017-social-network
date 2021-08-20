@@ -2,6 +2,7 @@
 integrada con el LOGIN y con acceso (hash) al REGISTRO */
 import {logInOnSubmit , loginWithGoogle} from '../controller/view-controller.js';
 
+
 export const portadaLogin = () => {
 
   const container = document.createElement('section');
@@ -12,19 +13,15 @@ export const portadaLogin = () => {
     <p class="portada-texto">
       ¡Bienvenida! Haz login para acceder a tu muro.
     </p>
-
-    <img src="../Assets/imagenes/Naturopolis-logo portada.svg" alt="logo" class="logo-portada">
+    <img src="../Assets/imagenes/Naturopolis-logo-portada.svg" alt="logo" class="logo-portada">
   </div>
-
   <div class="formulario-login-container" id="formulario-login-container">
   <h2 class="registro-titulo">Haz login</h2>
     <form action="#" method="post" id="form-login" class="form-login">
       <input type="email" name="email-login" id="email-login"  class="email-login" placeholder="tucorreo@correo.com" value="yuritalinda@gmail.com" >
-      <input type="password" name="password-login" id="password-login" class="password-login" placeholder="contraseña" value="" >
+      <input type="password" name="password-login" id="password-login" class="password-login" placeholder="contraseña" value="CHANCHITOS" >
         <h4>Puedes hacer login manual o puedes acceder con tu cuenta de Google</h4>
-
           <!-- Botón switch login -->
-
       <div class="container-boton">
         <div class="switch">
           <input type="radio" class="switch-input" name="view" value="" id="login" checked>
@@ -37,11 +34,8 @@ export const portadaLogin = () => {
         </div>
       </div>
     </form>
-
     <p class="registrate">¿No tienes cuenta? Entonces <a href="#/registro">regístrate</a> y comienza a disfrutar de una vida natural.</p>
   </div>
-
-
     `;
 
   

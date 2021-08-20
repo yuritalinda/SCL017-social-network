@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Didact_Gothic';
-  src: url(./Assets/fuentes/Didact_Gothic/DidactGothic-Regular.ttf);
+  src: url(../Assets/fuentes/Didact_Gothic/DidactGothic-Regular.ttf);
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url(./Assets/fuentes/Roboto/Roboto-Black.ttf);
+  src: url(../Assets/fuentes/Roboto/Roboto-Black.ttf);
 }
 
 @font-face {
   font-family: 'Roboto-regular';
-  src: url(./Assets/fuentes/Roboto/Roboto-Regular.ttf);
+  src: url(../Assets/fuentes/Roboto/Roboto-Regular.ttf);
 }
 
 *{
@@ -32,7 +32,7 @@ body{
   overflow-x: hidden;
 }
 
-main , section{
+section{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +41,7 @@ main , section{
   min-width: 320px;
   height: auto;
   text-align: center;
-  margin: 5%;
+  margin: 1%;
 }
 
 .portada-titulo {
@@ -221,44 +221,5 @@ letter-spacing: 0em;
   background-color: transparent;
 }
 
-/* ///// vista laptops ////*/
 
-@media screen and (min-width : 900px){
-  main , section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    
-  }
-
- .portada-header-container{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- }
-
- .logo-portada{
-  width: 300px;
-  background-color: transparent;
- }
-
- .formulario-login-container , .formulario-registro-container{
-   display: flex;
-   flex-direction: column;
-   justify-content: space-evenly;
-   align-items: center;
-   max-width: 40%;
-   height: 500px;
-   border-radius: 20px;
-   box-shadow:  5px 5px 10px #1c0c00,
-                -5px -5px 10px #341600;
-   font-size: larger;
- }
-
-
-
-
-}
 

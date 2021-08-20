@@ -1,8 +1,8 @@
 //Este archivo maneja todas las funciones de firebase.js que se van a usar
 
-import {
-  signIn, logIn, googleLogin, saveUsers,
-} from './firebase.js';
+import {signIn, logIn, googleLogin, saveUsers, signOut,addNote} from './firebase.js';
+=======
+
 
 export const changeHash = (hash) => {
   location.hash = hash;
@@ -13,7 +13,8 @@ export const signInOnSubmit = () => { //funcion de registro manual
   
   signIn(email, password)
     // eslint-disable-next-line no-alert
-    .then(() => alert('Datos Guardados'), changeHash('#/home'))
+
+    .then(() => alert('Datos Guardados'), changeHash('#/'))
     .catch((error) => {
       const errorMessage = error.message;
       alert(errorMessage);
@@ -22,8 +23,8 @@ export const signInOnSubmit = () => { //funcion de registro manual
 
 export const loginWithGoogle = () => {
   googleLogin().then(() => {
-    changeHash('/#home');
-    // saveUsers();
+    changeHash('/home');
+    saveUsers();
   });
 };
 
@@ -34,21 +35,26 @@ export const logInOnSubmit = () => { //funcion de logueado manual
   console.log(email, password);
 
   logIn(email, password)
-    .then(() => changeHash('/#home'))
+    .then(() => changeHash('/home'))
     .catch((error) => {
-      console.log("este es el mensaje de error porque falló la promesa");
       const errorMessage = error.message;
       alert(errorMessage);
       
     });
 };
 
-// export const signOutSubmit = () => {
-//   signOut().then(() => {
-//     changeHash('/logIn');
-//     alert('Cerrando sesión');
-//   }).catch((error) => {
-//     const errorMessage = error.message;
-//     alert(errorMessage);
-//   });
-// };
+export const signOutSubmit = () => {
+  signOut().then(() => {
+    changeHash('#/');
+    alert('Cerrando sesión');
+  }).catch((error) => {
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
+};
+export const addNoteOnSubmit = (post) => {
+
+    addNote(post)
+     
+};
+

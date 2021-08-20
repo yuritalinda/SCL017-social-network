@@ -1,5 +1,3 @@
-
-
 export const error = () => {
 
   const container = document.createElement('section');
