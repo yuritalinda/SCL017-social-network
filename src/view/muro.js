@@ -1,4 +1,8 @@
 
+//Importar las funciones del view controller que usaremos en el muro
+
+
+
 import {signOutSubmit,addNoteOnSubmit} from '../controller/view-controller.js';
 
 export const muro = () =>{
@@ -37,8 +41,6 @@ export const muro = () =>{
 
   container.innerHTML = viewMuro;
 
-  // Usamos INSERTBEFORE para agregar el archivo notas.js
-  
     
     const signOutBtn = container.querySelector('#btn-signOut');
     signOutBtn.addEventListener('click' , ()=>{
@@ -56,11 +58,16 @@ export const muro = () =>{
     // const buttonAddNote = container.querySelector('#btn-send');
     // buttonAddNote.addEventListener('onsubmit', (event)=>{
 
-    //   event.preventDefault();
-    //  //  addNoteOnSubmit();
-    //    console.log('este evento dispara despues de click');
-    //   });
-   
+// Usamos INSERTBEFORE para agregar el archivo notas.js
+  const crearPost = container.querySelector('#crear-post');
+  container.insertBefore(notas() , crearPost);
+  
+  const signOutBtn = container.querySelector('#btn-signOut');
+  signOutBtn.addEventListener('click' , ()=>{
+    signOutSubmit();
+  });
+
+
   
   
   return container;

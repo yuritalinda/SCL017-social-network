@@ -1,6 +1,8 @@
 //Este archivo maneja todas las funciones de firebase.js que se van a usar
 
 import {signIn, logIn, googleLogin, saveUsers, signOut,addNote} from './firebase.js';
+=======
+
 
 export const changeHash = (hash) => {
   location.hash = hash;
@@ -11,6 +13,7 @@ export const signInOnSubmit = () => { //funcion de registro manual
   
   signIn(email, password)
     // eslint-disable-next-line no-alert
+
     .then(() => alert('Datos Guardados'), changeHash('#/'))
     .catch((error) => {
       const errorMessage = error.message;
@@ -54,3 +57,4 @@ export const addNoteOnSubmit = (post) => {
     addNote(post)
      
 };
+

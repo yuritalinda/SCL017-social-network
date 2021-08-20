@@ -13,7 +13,9 @@ const db=firebase.firestore();
 
 export const saveUsers = () => {
   const user = firebase.auth().currentUser;
+
   db.collection('users').doc(user.uid).set({
+
     user: user.displayName,
     avatar: user.photoURL,
     uid: user.uid,
@@ -22,7 +24,6 @@ export const saveUsers = () => {
 };
 
 export const signOut = () => firebase.auth().signOut();
-
 
 export const addNote = (textNewNote) => {
   console.log(textNewNote);
