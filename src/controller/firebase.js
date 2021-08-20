@@ -24,8 +24,19 @@ export const saveUsers = () => {
 export const signOut = () => firebase.auth().signOut();
 
 
-export const addNote = (textNewNote) => db.collection('notes').set({
+export const addNote = (textNewNote) => {
+  console.log(textNewNote);
+  db.collection('notes').add({
   textNewNote,
+  
+  })
+  .then(resp =>{
+    console.log(resp);
 
-});
+  })
+  .catch(error=>{
+    console.log(error);
 
+  })
+
+}

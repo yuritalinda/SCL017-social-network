@@ -28,7 +28,7 @@ export const muro = () =>{
       <textarea name="" id="text-input" class="texto-input" cols="30" rows="5" >
     
       </textarea>
-      <button type="" class="btn-send" id="btn-send">
+      <button type="submit" class="btn-send" id="btn-send">
         <img src="../Assets/imagenes/send.svg" alt="send">
       </button>
     </form>
@@ -44,12 +44,22 @@ export const muro = () =>{
     signOutBtn.addEventListener('click' , ()=>{
       signOutSubmit();
     });
-  
-    const buttonAddNote = container.querySelector('#btn-send');
-    buttonAddNote.addEventListener('onsubmit', ()=>{
-       addNoteOnSubmit();
-       console.log('este evento dispara despues de click');
-      });
+    const formulario=container.querySelector('#form');
+    formulario.addEventListener('submit',(event)=>{
+      event.preventDefault();
+      //console.log(event.input.value);
+      const textarea=container.querySelector('#text-input');
+      console.log(textarea.value);
+      addNoteOnSubmit(textarea.value);
+
+    });
+    // const buttonAddNote = container.querySelector('#btn-send');
+    // buttonAddNote.addEventListener('onsubmit', (event)=>{
+
+    //   event.preventDefault();
+    //  //  addNoteOnSubmit();
+    //    console.log('este evento dispara despues de click');
+    //   });
    
   
   

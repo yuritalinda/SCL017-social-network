@@ -49,30 +49,8 @@ export const signOutSubmit = () => {
     alert(errorMessage);
   });
 };
-export const addNoteOnSubmit = (event) => {
-  event.preventDefault();
-  const textNewNote = document.getElementById('texto-input');
- 
-  if (textNewNote.value === '') {
-    alert('Campos vacíos');
-  } else {
-    addNote(textNewNote.value)
-      .then((docRef) => {
-        textNewNote.value = '';
-        console.log('Document written with ID: ', docRef.id);
-      }).catch((error) => {
-        textNewNote.value = '';
-        console.error('Error adding document: ', error);
-      });
-  }
+export const addNoteOnSubmit = (post) => {
+
+    addNote(post)
+     
 };
-// export const editNoteOnSubmit = (objNote) => {
-//   const input = document.getElementById('input-edit-note');
-//   editNote(input.value, objNote)
-//     .then(() => {
-//       console.log('Document successfully updated');
-//     }).catch((error) => {
-//       console.error('Error updating document: ', error);
-//     });
-// };
-// export const deleteNoteOnClick = (objNote) => deleteNote(objNote.id);
