@@ -9,84 +9,35 @@ export const googleLogin = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
-
+const db=firebase.firestore();
 
 export const saveUsers = () => {
-  const user = firebase.auth().currentUser; 
-  firebase.firestore().collection('users').doc(user.uid).set({ 
-    name: user.displayName,
-    mail: user.email,
-    uid: user.uid
+  const user = firebase.auth().currentUser;
+
+  db.collection('users').doc(user.uid).set({
+
+    user: user.displayName,
+    avatar: user.photoURL,
+    uid: user.uid,
+    email: user.email,
   });
 };
 
 export const signOut = () => firebase.auth().signOut();
 
-// export const addNote = (textNewNote) => firebase.firestore().collection('publicaciones').add({
-//   title: textNewNote,
-//   user: firebase.auth().currentUser.displayName,
-//   avatar: firebase.auth().currentUser.photoURL,
-//   uid: firebase.auth().currentUser.uid,
-//   date: firebase.firestore.Timestamp.fromDate(new Date()),
-//   love: 0,
-//   lovers: [],
-//   comments: [],
-// });
+export const addNote = (textNewNote) => {
+  console.log(textNewNote);
+  db.collection('notes').add({
+  textNewNote,
+  
+  })
+  .then(resp =>{
+    console.log(resp);
 
-// export const editNote = (textEditNote, objNote) => firebase.firestore().collection('notes').doc(objNote.id).update({
-//   title: textEditNote,
-// });
-// export const deleteNote = (idNote) => firebase.firestore().collection('notes').doc(idNote).delete();
+  })
+  .catch(error=>{
+    console.log(error);
 
-// export const getNotes = (callback) => firebase.firestore().collection('notes').orderBy('date', 'desc')
-//   .onSnapshot((querySnapshot) => {
-//     const dato = [];
-//     const user = firebase.auth().currentUser;
-//     querySnapshot.forEach((doc) => {
-//       console.log(doc.id);
-//       if (doc.data().privacy === 'public') {
-//         dato.push({ id: doc.id, ...doc.data() });
-//         console.log({ id: doc.id, ...doc.data() });
-//       } if (doc.data().privacy === 'private' && doc.data().uid === user.uid) {
-//         dato.push({ id: doc.id, ...doc.data() });
-//       }
-//     });
-//     callback(dato);
-//   });
+  })
 
-// export const addComment = (textComment, objNote) => firebase.firestore().collection('notes').doc(objNote.id).update({
-//   comments: objNote.comments.concat({
-//     uidComment: firebase.auth().currentUser.uid,
-//     photoUserComment: firebase.auth().currentUser.photoURL,
-//     userComment: firebase.auth().currentUser.displayName,
-//     comment: textComment,
-//     dateComment: firebase.firestore.Timestamp.fromDate(new Date()),
-//   }),
-// });
-
-// export const countLove = (objNote) => {
-//   const user = firebase.auth().currentUser;
-//   firebase.firestore().collection('notes').doc(objNote.id).update({
-//     love: firebase.firestore.FieldValue.increment(1),
-//     lovers: objNote.lovers.concat([
-//       {
-//         user: user.displayName,
-//         uid: user.uid,
-//       },
-//     ]),
-//   });
-// };
-
-// export const dislike = (objNote) => {
-//   const user = firebase.auth().currentUser;
-//   firebase.firestore().collection('notes').doc(objNote.id).update({
-//     love: firebase.firestore.FieldValue.increment(-1),
-//     lovers: objNote.lovers.filter((element) => element.uid !== user.uid),
-//   });
-// };
-
-// export const deleteComments = (objNote, i) => {
-//   firebase.firestore().collection('notes').doc(objNote.id).update({
-//     comments: objNote.comments.filter((element, position) => position !== i),
-//   });
-// };
+}

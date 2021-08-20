@@ -1,8 +1,7 @@
 //Este archivo maneja todas las funciones de firebase.js que se van a usar
 
-import {
-  signIn, logIn, googleLogin, signOut , saveUsers
-} from './firebase.js';
+import {signIn, logIn, googleLogin, saveUsers, signOut,addNote} from './firebase.js';
+
 
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -26,14 +25,9 @@ export const signInOnSubmit = () => { //funcion de registro manual
   const password = document.getElementById("password-registro").value;
   
   signIn(email, password)
-    .then((userCredential) => {
-      let user = userCredential.user;
-      console.log(user);
-      saveUsers();
-      alert('Datos Guardados');
-      changeHash('#/');
+    // eslint-disable-next-line no-alert
 
-    })
+    .then(() => alert('Datos Guardados'), changeHash('#/'))
     .catch((error) => {
       const errorMessage = error.message;
       alert(errorMessage);
@@ -75,3 +69,9 @@ export const signOutSubmit = () => {
     alert(errorMessage);
   });
 };
+export const addNoteOnSubmit = (post) => {
+
+    addNote(post)
+     
+};
+
