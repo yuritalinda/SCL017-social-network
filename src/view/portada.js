@@ -18,8 +18,8 @@ export const portadaLogin = () => {
   <div class="formulario-login-container" id="formulario-login-container">
   <h2 class="registro-titulo">Haz login</h2>
     <form action="#" method="post" id="form-login" class="form-login">
-      <input type="email" name="email-login" id="email-login"  class="email-login" placeholder="tucorreo@correo.com" value="yuritalinda@gmail.com" >
-      <input type="password" name="password-login" id="password-login" class="password-login" placeholder="contraseña" value="CHANCHITOS" >
+      <input type="email" name="email-login" id="email-login"  class="email-login" placeholder="tucorreo@correo.com" value="" >
+      <input type="password" name="password-login" id="password-login" class="password-login" placeholder="contraseña" value="" >
         <h4>Puedes hacer login manual o puedes acceder con tu cuenta de Google</h4>
           <!-- Botón switch login -->
       <div class="container-boton">

@@ -1,8 +1,21 @@
 //Este archivo maneja todas las funciones de firebase.js que se van a usar
 
 import {signIn, logIn, googleLogin, saveUsers, signOut,addNote} from './firebase.js';
-=======
 
+
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+
+    console.log(user , 'estamos logueados');
+
+  } else {
+     
+    console.log(user , 'NO estamos logueados');
+    
+
+  }
+});
 
 export const changeHash = (hash) => {
   location.hash = hash;
@@ -25,6 +38,7 @@ export const loginWithGoogle = () => {
   googleLogin().then(() => {
     changeHash('/home');
     saveUsers();
+    
   });
 };
 
@@ -32,10 +46,13 @@ export const logInOnSubmit = () => { //funcion de logueado manual
   const email = document.getElementById("email-login").value;
   const password = document.getElementById("password-login").value; 
 
-  console.log(email, password);
 
   logIn(email, password)
-    .then(() => changeHash('/home'))
+    .then(() =>  {
+      saveUsers();
+      changeHash('/home');
+
+    })
     .catch((error) => {
       const errorMessage = error.message;
       alert(errorMessage);

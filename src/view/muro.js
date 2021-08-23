@@ -1,15 +1,15 @@
 
 //Importar las funciones del view controller que usaremos en el muro
 
-
-
 import {signOutSubmit,addNoteOnSubmit} from '../controller/view-controller.js';
+import {notas} from './notas.js'
 
 export const muro = () =>{
 
   const container = document.createElement('section');
   const user=firebase.auth().currentUser;
   container.className = 'muro';
+
 
   const viewMuro= `
   <header class="header-container" id="header-container">
@@ -25,9 +25,9 @@ export const muro = () =>{
     <img src="${user.photoURL}" alt="" class="avatar-usuario">
     <h3 class="nombre-usuario-perfil" id="nombre-usuario">${user.displayName}</h3>
   </section>
+
+
   <section class="crear-post" id="section-post">
-  <!-- Tasks List -->
-  <div class="col-md-6" id="tasks-container"></div>
     <form id="form">
       <textarea name="" id="text-input" class="texto-input" cols="30" rows="5" >
     
@@ -46,29 +46,21 @@ export const muro = () =>{
     signOutBtn.addEventListener('click' , ()=>{
       signOutSubmit();
     });
-    const formulario=container.querySelector('#form');
+    const formulario = container.querySelector('#form');
     formulario.addEventListener('submit',(event)=>{
       event.preventDefault();
-      //console.log(event.input.value);
-      const textarea=container.querySelector('#text-input');
+
+      const textarea = container.querySelector('#text-input');
       console.log(textarea.value);
       addNoteOnSubmit(textarea.value);
+      formulario.reset();
+    
 
     });
-    // const buttonAddNote = container.querySelector('#btn-send');
-    // buttonAddNote.addEventListener('onsubmit', (event)=>{
 
 // Usamos INSERTBEFORE para agregar el archivo notas.js
-  const crearPost = container.querySelector('#crear-post');
+  const crearPost = container.querySelector('#section-post');
   container.insertBefore(notas() , crearPost);
-  
-  const signOutBtn = container.querySelector('#btn-signOut');
-  signOutBtn.addEventListener('click' , ()=>{
-    signOutSubmit();
-  });
-
-
-  
-  
+    
   return container;
   };
