@@ -12,7 +12,7 @@ export const signInOnSubmit = () => { //funcion de registro manual
   const email = document.getElementById("email-registro").value;
   const password = document.getElementById("password-registro").value;
   
-  signIn(email, password)
+  signIn(email , password)
     // eslint-disable-next-line no-alert
 
     .then(() => alert('Datos Guardados'), changeHash('#/'))
@@ -33,6 +33,7 @@ export const loginWithGoogle = () => {
 export const logInOnSubmit = () => { //funcion de logueado manual
   const email = document.getElementById("email-login").value;
   const password = document.getElementById("password-login").value; 
+
 
 
   logIn(email, password)
