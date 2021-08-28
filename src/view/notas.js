@@ -8,9 +8,12 @@ export const notas = ()=>{
 
  
   feedUpdate((querySnapshot) => {
+    const userActive = firebase.auth().currentUser.email;
+    
     container.innerHTML= '';
     querySnapshot.forEach((doc) => {
-        const data = doc.data();
+
+      let data = doc.data();
 
          container.innerHTML += `<div class="post-container">
           <div class="user-info">
@@ -23,12 +26,6 @@ export const notas = ()=>{
             <p>${data.textNewNote}</p>
           </div>  
 
-          <div class="nav-post">
-          <button class="btn-editar" id="btn-editar">editar</button>
-          <button class="btn-borrar" data-id="${doc.id}" id="btn-borrar">borrar</button>
-          </div>
-        </div>
-
 
 
         <div class="nav-vertical">
@@ -37,25 +34,33 @@ export const notas = ()=>{
         
         </div>
       </div> 
+
+
         `;
 
-        const btnsDelete = container.querySelectorAll(".btn-borrar");
-          btnsDelete.forEach((btn) =>
-            btn.addEventListener("click", async (e) => {
-              try {
-                await deletePost(e.target.dataset.id);
-              } catch (error) {
-                console.log(error);
-              }
-            })
-    );
+      console.log(userActive, data.email);
+      if (data.email ===  userActive){
+
+        container.innerHTML += `
+        <div class="nav-post">
+        <button class="btn-editar" id="btn-editar" data-id="${doc.id}">editar</button>
+        <button class="btn-borrar" data-id="${doc.id}" id="btn-borrar">borrar</button>
+        </div>
+        `;
+      }
 
 
+     });
 
-    });
-    
-
-    
+     const btnsDelete = container.querySelectorAll(".btn-borrar");
+     btnsDelete.forEach((btn) =>
+      btn.addEventListener("click", async (e) => {
+        try {
+          await deletePost(e.target.dataset.id);
+        } catch (error) {
+          console.log(error);
+        }
+      }));
     
   });
 
