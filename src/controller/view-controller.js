@@ -74,5 +74,25 @@ export const feedUpdate = (callback) => {
 
 export const deletePost = (id) => {
   const db = firebase.firestore();
-  db.collection("notes").doc(id).delete();
+  db.collection('notes').doc(id).delete();
 }
+
+/* export const editarPost = (id, currentText) => {
+  const db = firebase.firestore();
+  const textNewNote = prompt('Ingresa el nuevo texto', currentText)
+  if (textNewNote.trim().length === 0) {
+      alert ("Rellena el campo solicitado")
+  };
+  
+
+       return db.collection("notes").doc(id).update({
+           textNewNote
+      })
+          .then(() => {
+              console.log("Document successfully updated!");
+          })
+          .catch((error) => {
+            console.log(textNewNote);
+              console.error("Error updating document: ", error);
+          });
+  }; */
