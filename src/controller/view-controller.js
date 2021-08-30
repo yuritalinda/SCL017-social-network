@@ -4,18 +4,6 @@ import {signIn, logIn, googleLogin, saveUsers, signOut,addNote} from './firebase
 
 
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-
-    console.log(user , 'estamos logueados');
-
-  } else {
-     
-    console.log(user , 'NO estamos logueados');
-    
-
-  }
-});
 
 export const changeHash = (hash) => {
   location.hash = hash;
@@ -24,7 +12,7 @@ export const signInOnSubmit = () => { //funcion de registro manual
   const email = document.getElementById("email-registro").value;
   const password = document.getElementById("password-registro").value;
   
-  signIn(email, password)
+  signIn(email , password)
     // eslint-disable-next-line no-alert
 
     .then(() => alert('Datos Guardados'), changeHash('#/'))
@@ -45,6 +33,7 @@ export const loginWithGoogle = () => {
 export const logInOnSubmit = () => { //funcion de logueado manual
   const email = document.getElementById("email-login").value;
   const password = document.getElementById("password-login").value; 
+
 
 
   logIn(email, password)
@@ -71,7 +60,39 @@ export const signOutSubmit = () => {
 };
 export const addNoteOnSubmit = (post) => {
 
-    addNote(post)
+
+ addNote(post)
+    console.log(post);
      
 };
 
+export const feedUpdate = (callback) => {
+  const db = firebase.firestore();
+  db.collection('notes').orderBy ("date").onSnapshot(callback);
+   
+};
+
+export const deletePost = (id) => {
+  const db = firebase.firestore();
+  db.collection('notes').doc(id).delete();
+}
+
+/* export const editarPost = (id, currentText) => {
+  const db = firebase.firestore();
+  const textNewNote = prompt('Ingresa el nuevo texto', currentText)
+  if (textNewNote.trim().length === 0) {
+      alert ("Rellena el campo solicitado")
+  };
+  
+
+       return db.collection("notes").doc(id).update({
+           textNewNote
+      })
+          .then(() => {
+              console.log("Document successfully updated!");
+          })
+          .catch((error) => {
+            console.log(textNewNote);
+              console.error("Error updating document: ", error);
+          });
+  }; */

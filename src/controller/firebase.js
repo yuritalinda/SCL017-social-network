@@ -9,6 +9,7 @@ export const googleLogin = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
+
 const db=firebase.firestore();
 
 export const saveUsers = () => {
@@ -29,6 +30,7 @@ export const addNote = (textNewNote) => {
   const user = firebase.auth().currentUser;
   db.collection('notes').add({
   user: user.displayName,
+  email: user.email,
   date: firebase.firestore.Timestamp.fromDate(new Date()), 
   textNewNote,
   
