@@ -51,8 +51,9 @@ export const logInOnSubmit = () => { //funcion de logueado manual
 
 export const signOutSubmit = () => {
   signOut().then(() => {
-    changeHash('#/');
     alert('Cerrando sesión');
+
+    changeHash('#');
   }).catch((error) => {
     const errorMessage = error.message;
     alert(errorMessage);
